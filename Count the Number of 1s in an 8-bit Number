@@ -1,0 +1,14 @@
+Count the Number of 1s in an 8-bit Number
+
+MVI A, 25H ; Number to examine
+MVI B, 08H ; Loop counter = 8 bits
+MVI C, 00H ; Count of 1s = 0
+LOOP:
+RRC ; Rotate right: LSB → CY
+JNC NEXT ; If CY=0, bit was 0, skip
+INR C ; CY=1, bit was 1, count it
+NEXT:
+DCR B ; Decrement bit counter
+JNZ LOOP ; Repeat for all 8 bits
+MOV A, C ; Result: A = number of 1s
+HLT
