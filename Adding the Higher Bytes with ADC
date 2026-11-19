@@ -1,0 +1,5 @@
+Adding the Higher Bytes with ADC
+
+MOV A, H ; A = 12H
+ADC D ; A = 12H + 11H + CY
+MOV H, A ; H = 23H
