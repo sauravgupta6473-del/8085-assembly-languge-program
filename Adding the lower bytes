@@ -1,0 +1,5 @@
+Adding the Lower Bytes
+
+MOV A, L ; A = 34H
+ADD E ; A = 34H + 11H
+MOV L, A ; L = 45H
