@@ -1,0 +1,14 @@
+Find the Largest Number in a Memory Block
+
+LXI H, 2050H ; HL points to 2050H
+MOV A, M ; A = first number (initial max)
+MVI C, 04H ; 4 more numbers remain
+LOOP:
+INX H ; Advance pointer to next address
+CMP M ; Compare A with memory[HL]
+JNC NEXT ; If A >= memory[HL], skip
+MOV A, M ; Memory[HL] is larger, update A
+NEXT:
+DCR C ; Decrement count
+JNZ LOOP ; Repeat if more numbers remain
+HLT ; A = largest number found
