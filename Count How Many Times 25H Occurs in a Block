@@ -1,0 +1,17 @@
+Count How Many Times 25H Occurs in a
+Block
+
+LXI H, 2050H ; HL → start of block
+MVI B, 05H ; 5 numbers total
+MVI C, 00H ; Occurrence count = 0
+LOOP:
+MOV A, M ; Load current value into A
+CPI 25H ; Compare A with 25H
+JNZ NOT_FOUND ; If A ≠ 25H, skip
+INR C ; A = 25H, increment count
+NOT_FOUND:
+INX H ; Advance pointer
+DCR B ; Decrement total counter
+JNZ LOOP ; Repeat for all elements
+MOV A, C ; A = number of occurrences
+HLT
