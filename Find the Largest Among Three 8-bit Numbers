@@ -1,0 +1,15 @@
+Find the Largest Among Three 8-bit
+Numbers
+
+MVI A, 25H ; A = first number
+MVI B, 45H ; B = second number
+MVI C, 35H ; C = third number
+CMP B ; Compare A with B
+JNC CHECK_C ; If A >= B, skip
+MOV A, B ; B is larger, update A
+CHECK_C:
+CMP C ; Compare A (current max) with C
+JNC DONE ; If A >= C, A is the max
+MOV A, C ; C is larger, update A
+DONE:
+HLT ; A = largest of all three
