@@ -1,0 +1,11 @@
+Check Whether a Number is Zero or Non-
+Zero
+
+MVI A, 00H ; Load the number to test
+ORA A ; A OR A → sets flags, A unchanged
+JZ ZERO ; Jump if Zero flag = 1
+; Number is non-zero
+HLT
+ZERO:
+; Number is zero
+HLT
