@@ -1,0 +1,17 @@
+Count the Number of Even Numbers in a
+Block
+
+LXI H, 2050H ; HL → start of block
+MVI B, 05H ; 5 numbers total
+MVI C, 00H ; Even count = 0
+LOOP:
+MOV A, M ; Load current number into A
+ANI 01H ; AND with 00000001
+JNZ ODD ; If result ≠ 0, it's odd
+INR C ; Even: increment count
+ODD:
+INX H ; Advance pointer
+DCR B ; Decrement total counter
+JNZ LOOP ; Repeat for all numbers
+MOV A, C ; A = count of even numbers
+HLT
