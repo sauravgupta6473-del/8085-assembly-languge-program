@@ -1,0 +1,12 @@
+Find the Smaller of Two 8-bit Numbers
+
+MVI A, 45H ; Load 45H into A
+MVI B, 25H ; Load 25H into B
+CMP B ; A - B internally
+JC B_SMALLER ; Jump if Carry (A < B)
+; A is smaller (or equal)
+HLT
+B_SMALLER:
+; B is smaller
+MOV A, B ; Move B into A
+HLT
