@@ -1,0 +1,5 @@
+1's and 2's Complement of an 8-bit Number
+
+MVI A, 25H
+CMA
+HLT
